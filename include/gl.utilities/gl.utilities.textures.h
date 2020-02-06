@@ -2,7 +2,7 @@
 #define GL_UTILITIES_TEXTURES_H
 
 #ifdef _WIN32
-#include <GL/glad.h>
+#include <glad/glad.h>
 #endif // _WIN32
 
 #ifdef __ANDROID__

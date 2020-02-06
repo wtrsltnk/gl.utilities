@@ -1,20 +1,9 @@
 
-add_library(gl.utilities
-    gl.utilities.cpp
-    )
-
-target_compile_features(gl.utilities
-    PRIVATE cxx_auto_type
-    PRIVATE cxx_nullptr
-    PRIVATE cxx_range_for
-    PRIVATE cxx_thread_local
-    )
+add_library(gl.utilities INTERFACE)
 
 target_include_directories(gl.utilities
-    PUBLIC
+    INTERFACE
         $<INSTALL_INTERFACE:include>
-    PRIVATE
-        ../include
     )
 
 install(
@@ -28,10 +17,10 @@ install(
 
 install(
     FILES
-        ${system.net_SOURCE_DIR}/include/gl.utilities/gl.utilities.loaders.h
-        ${system.net_SOURCE_DIR}/include/gl.utilities/gl.utilities.shaders.h
-        ${system.net_SOURCE_DIR}/include/gl.utilities/gl.utilities.textures.h
-        ${system.net_SOURCE_DIR}/include/gl.utilities/gl.utilities.vertexbuffers.h
+        ${PROJECT_SOURCE_DIR}/include/gl.utilities/gl.utilities.loaders.h
+        ${PROJECT_SOURCE_DIR}/include/gl.utilities/gl.utilities.shaders.h
+        ${PROJECT_SOURCE_DIR}/include/gl.utilities/gl.utilities.textures.h
+        ${PROJECT_SOURCE_DIR}/include/gl.utilities/gl.utilities.vertexbuffers.h
     DESTINATION
         "include/gl.utilities"
     )
